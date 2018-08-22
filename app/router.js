@@ -8,4 +8,5 @@ module.exports = app => {
   router.get('/', controller.home.index);
   router.get('/banner', controller.banner.index);
   router.get('/image', controller.image.index);
+  router.get('/product',controller.product.index);
 };

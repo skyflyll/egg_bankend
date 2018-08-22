@@ -13,6 +13,5 @@ module.exports = app =>{
         app.model.ProductImage.belongsTo(app.model.Image,{as:'image',foreignKey:'image_id'})
         app.model.ProductImage.belongsTo(app.model.Product,{as:'product',foreignKey:'product_id'})
     }
-    ProductImage.sync({force:true});
     return ProductImage;
 }

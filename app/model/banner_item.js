@@ -13,7 +13,6 @@ module.exports = app =>{
     BannerItem.associate = function(){
         app.model.BannerItem.belongsTo(app.model.Banner,{as:'banner',foreignKey:'banner_id'})
         app.model.BannerItem.belongsTo(app.model.Image,{as:'image',foreignKey:'image_id'})
-    }
-    BannerItem.sync({force:true});
+    }    
     return BannerItem;
 }

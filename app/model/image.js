@@ -3,7 +3,6 @@ module.exports = app =>{
     const {STRING,INTEGER,DATE} = app.Sequelize;
     const Image = app.model.define('image',{
         url:STRING,
-        form:INTEGER,
     },{
         tableName:'image',
         underscored:true
@@ -12,6 +11,5 @@ module.exports = app =>{
         app.model.Image.hasOne(app.model.BannerItem,{as:'banner_item',foreignKey:'image_id'})
         app.model.Image.hasOne(app.model.ProductImage,{as:'product_image',foreignKey:'image_id'})
     }
-    Image.sync({force:true});
     return Image;
 }

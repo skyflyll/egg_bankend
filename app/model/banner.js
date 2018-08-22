@@ -7,15 +7,8 @@ module.exports = app => {
         DATE
     } = app.Sequelize;
     const Banner = app.model.define('banner', {
-        id: {
-            type: INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
-        },
         name: STRING(30),
         description: STRING,
-        created_at: DATE,
-        updated_at: DATE,
     }, {
         tableName: 'banner',
         underscored: true
@@ -31,6 +24,5 @@ module.exports = app => {
             foreignKey:'banner_id'
         })
     }
-    Banner.sync({force:true});
     return Banner;
 }
