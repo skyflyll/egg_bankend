@@ -11,14 +11,17 @@ class Product extends Service {
     }
     async getProductById(id) {
         return this.ctx.model.Product.findOne({
+            // 根据id获取商品
             where:{
                 id:id
             },
             attributes: ['id', 'title', 'price', 'old_price','discount','product_pro_img'],
             include: {
+                // 子查询 获取banner信息
                 model: this.ctx.model.Banner,
                 as: 'banner',
                 attributes:['id','name','description'],
+                // 获取banner图片
                 include: {
                     model: this.ctx.model.BannerItem,
                     as: 'banner_item',
@@ -30,7 +33,6 @@ class Product extends Service {
                     }
                 },
             },
-
         })
     }
 }
