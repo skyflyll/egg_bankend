@@ -8,7 +8,7 @@ module.exports = app =>{
         stock:INTEGER, //库存
         product_pro_img:STRING, // 商品预览图
         banner_id:INTEGER, //banner图
-        classification_id:INTEGER,
+        classification_id:INTEGER, // 分类
         // category_id:INTEGER, // 商品所属分类
         // comment_id:INTEGER, //评论
     },{
